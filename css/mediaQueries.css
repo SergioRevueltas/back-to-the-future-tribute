@@ -1,0 +1,151 @@
+/* ---------------------- Smartphones (portrait) ---------------------- */
+@media screen and (max-width: 320px) and (orientation: portrait){
+    html {
+        font-size: 0.2em;
+    }
+    .mini-label {
+        padding: 0.2em;
+    }
+    #time-control {
+        padding: 1em 1em 1em 0.5em;
+    }
+}
+
+@media only screen and (min-width : 321px) and (max-width: 480px) and (orientation: portrait){
+    html {
+        font-size: 0.3em;
+    }
+    .mini-label {
+        padding: 0.2em;
+    }
+}
+
+@media only screen and (min-width : 481px) and (max-width: 640px) and (orientation: portrait){
+    html {
+        font-size: 0.4em;
+    }
+    .mini-label {
+        padding: 0.3em;
+    }
+}
+
+@media only screen and (min-width : 641px) and (max-width: 768px) and (orientation: portrait){
+    html {
+        font-size: 0.55em;
+    }
+    .mini-label {
+        padding: 0.5em;
+    }
+}
+
+@media only screen and (min-width : 769px) and (max-width: 1024px) and (orientation: portrait){
+    html {
+        font-size: 0.7em;
+    }
+    .mini-label {
+        padding: 0.6em;
+    }
+}
+
+@media only screen and (min-width : 1025px) and (max-width: 1280px) and (orientation: portrait){
+    html {
+        font-size: 0.8em;
+    }
+}
+
+@media only screen and (min-width : 1280px) and (max-width: 1400px) and (orientation: portrait){
+    html {
+        font-size: 1em;
+    }
+}
+
+@media only screen and (min-width : 1401px) and (max-width: 1680px) and (orientation: portrait){
+    html {
+        font-size: 1.25em;
+    }
+}
+
+@media only screen and (min-width : 1681px) and (max-width: 1920px) and (orientation: portrait){
+    html {
+        font-size: 1.4em;
+    }
+}
+
+@media only screen and (min-width : 1921px) and (orientation: portrait){
+    html {
+        font-size: 1.6em;
+    }
+}
+
+/* ---------------------- Smartphones (landscape) ---------------------- */
+@media screen and (max-width: 320px) and (orientation: landscape){
+    html {
+        font-size: 0.2em;
+    }
+    .mini-label {
+        padding: 0.2em;
+    }
+}
+
+@media only screen and (min-width : 321px) and (max-width: 480px) and (orientation: landscape){
+    html {
+        font-size: 0.4em;
+    }
+    .mini-label {
+        padding: 0.2em;
+    }
+}
+
+@media only screen and (min-width : 481px) and (max-width: 640px) and (orientation: landscape){
+    html {
+        font-size: 0.45em;
+    }
+    .mini-label {
+        padding: 0.4em;
+    }
+}
+
+@media only screen and (min-width : 641px) and (max-width: 768px) and (orientation: landscape){
+    html {
+        font-size: 0.6em;
+    }
+    .mini-label {
+        padding: 0.5em;
+    }
+}
+
+@media only screen and (min-width : 769px) and (max-width: 1024px) and (orientation: landscape){
+    html {
+        font-size: 0.75em;
+    }
+}
+
+@media only screen and (min-width : 1025px) and (max-width: 1280px) and (orientation: landscape){
+    html {
+        font-size: 0.8em;
+    }
+}
+
+@media only screen and (min-width : 1280px) and (max-width: 1400px) and (orientation: landscape){
+    html {
+        font-size: 0.9em;
+    }
+}
+
+@media only screen and (min-width : 1401px) and (max-width: 1680px) and (orientation: landscape){
+    html {
+        font-size: 1.1em;
+    }
+}
+
+@media only screen and (min-width : 1681px) and (max-width: 1920px) and (orientation: landscape){
+    html {
+        font-size: 1.25em;
+    }
+}
+
+@media only screen and (min-width : 1921px) and (orientation: landscape){
+    html {
+        font-size: 1.4em;
+    }
+}
