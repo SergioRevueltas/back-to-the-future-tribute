@@ -700,7 +700,7 @@ var timeCircuit = {
         circuitFailureAudio.play();
         timeCircuit.selectedValuesBuffer = "";
         timeCircuit.updateSelectedValuesBufferTextField();
-        var digits = Array.prototype.slice.call(document.querySelectorAll(".digit-value"));
+        var digits = Array.prototype.slice.call(document.querySelectorAll("#time-circuit .digit-value"));
         digits.forEach(function (element) {
             element.className  = 'digit-value failure';
         });
@@ -933,7 +933,7 @@ var timeCircuit = {
                                   audio: winAudio });  
 
         
-        // ------------- 1985 -------------
+        // ------------- 1885 -------------
         // the third was not so good...
     },
 
