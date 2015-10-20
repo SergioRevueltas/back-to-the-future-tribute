@@ -4,8 +4,7 @@ All UI components, animations and transitions are made in CSS3 and pure JavaScri
 
 ####Do you remember the future?
 
-Probe your knowledge about one of the best movies of all time.
-
+Prove your knowledge about one of the best movies of all time.
 If you are curious you will find some easter eggs.
 
 ## License 
