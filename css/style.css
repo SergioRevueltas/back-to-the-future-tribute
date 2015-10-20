@@ -1,0 +1,469 @@
+/* http://www.1001fonts.com/digital-7-font.html */
+@font-face {
+    font-family: "Seven-segments";
+    src: url('../fonts/digital-7__mono_.ttf') format("truetype");
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: 'Syncopate', sans-serif;
+    text-align: center;
+    background-color: #000000;
+    color: white;
+    /*background-image: url("../img/bttf-bg.jpg");*/
+    background-size: cover;
+    overflow: hidden;
+}
+
+body.time-traveling {
+    -webkit-animation: time-traveling 2s;
+    -moz-animation: time-traveling 2s;
+    -o-animation: time-traveling 2s;
+    animation: time-traveling 2s;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+h1 {
+    margin: 1em 0em 0em 0em;
+}
+
+audio {
+    display: none;
+    margin: 5px;
+}
+
+div {
+    color: #E3E3E3;
+    border-spacing: 0;
+}
+
+/* ------------------------------ SIGN ------------------------------ */
+
+#sign {
+    font-family: serif;
+    display: block;
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 95%;
+    font-size: 4em;
+    z-index: 100000;
+    overflow: hidden;
+}
+
+#sign.hide {
+    opacity: 0;
+    left: -300%;
+    -webkit-animation: hide-sign 5s;
+    -moz-animation: hide-sign 5s;
+    -o-animation: hide-sign 5s;
+    animation: hide-sign 5s;
+}
+
+#sign-line-one {
+    display: block;    
+    position: relative;
+    top: 40%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+}
+
+#sign-line-two {
+    position: relative;
+    display: block;
+    top: 40%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+/* ------------------------------ SUGAR SIGN ------------------------------ */
+#sugar-sign {
+    opacity: 1;
+    position: relative;
+    display: block;
+    margin-bottom: 1em;
+    font-family: serif;
+    font-size: 1.2em;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#sugar-sign.hidden {
+    opacity: 0;
+}
+
+#sugar-sign.sugar-animate {
+    opacity: 1;
+    position: relative;
+    animation-timing-function: ease-in-out;
+    -webkit-animation: show-author 5s;
+    -moz-animation: show-author 5s;
+    -o-animation: show-author 5s;
+    animation: show-author 5s;
+}
+/* ------------------------------ FOOTER ------------------------------ */
+footer {
+    font-size: 0.8em;
+    position: absolute;
+    top: 99%;
+    /* height: 4em; */
+    display: block;
+    opacity: 0;
+    letter-spacing: 0.5em;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+footer.footer-animate {
+    opacity: 1;
+    animation-timing-function: ease-in-out;
+    -webkit-animation: show-author 3s;
+    -moz-animation: show-author 3s;
+    -o-animation: show-author 3s;
+    animation: show-author 3s;
+}
+
+#author {
+    margin: 0em 0em 1em 0em;
+}
+
+#heart {
+    cursor: pointer;
+}
+
+
+/* ------------------------------ TIME MACHINE ------------------------------ */
+#time-machine {
+    position: relative;
+    display: block;
+    top: 50%;
+    /* left: 50%; */
+    transform: translate(0%,-50%);
+    /*
+    -webkit-animation: show 7s;
+    -moz-animation: show 7s;
+    -o-animation: show 7s;
+    animation: show 7s;
+    */
+
+    /*
+    perspective: 1000px;
+    -webkit-transform-style: preserve-3d;
+    */
+}
+
+/* ------------------------------ PEDAL ------------------------------ */
+#pedal {
+    display: inline-block;
+    position: relative;
+    opacity: 0;
+    margin-top:0.5em;
+    padding: 0em 0.2em 0em 0em;
+    border-radius: 0.4em;
+    border-style: outset;
+    border-color: #3E3E3E;
+}
+
+#pedal.on {
+    -webkit-animation: show 1s;
+    -moz-animation: show 1s;
+    -o-animation: show 1s;
+    animation: show 1s;
+    
+    opacity: 1;
+
+
+    background-image: -webkit-repeating-linear-gradient(top, hsl(0, 0%, 20%) 0%, 
+                                                             hsl(0, 0%, 26%) 46%, 
+                                                             hsl(0, 0%, 10%) 100%);
+    background-image: -moz-repeating-linear-gradient(top, hsl(0, 0%, 20%) 0%, 
+                                                             hsl(0, 0%, 26%) 46%, 
+                                                             hsl(0, 0%, 10%) 100%);
+    background-image: -o-repeating-linear-gradient(top, hsl(0, 0%, 20%) 0%, 
+                                                             hsl(0, 0%, 26%) 46%, 
+                                                             hsl(0, 0%, 10%) 100%);
+}
+
+#pedal.on:hover {
+    cursor: pointer;
+    background-image: -webkit-repeating-linear-gradient(top, hsl(0, 0%, 10%) 0%, 
+                                                             hsl(0, 0%, 26%) 80%, 
+                                                             hsl(0, 0%, 10%) 100%);
+    background-image: -moz-repeating-linear-gradient(top, hsl(0, 0%, 10%) 0%, 
+                                                             hsl(0, 0%, 26%) 80%, 
+                                                             hsl(0, 0%, 10%) 100%);
+    background-image: -o-repeating-linear-gradient(top, hsl(0, 0%, 10%) 0%, 
+                                                             hsl(0, 0%, 26%) 80%, 
+                                                             hsl(0, 0%, 10%) 100%);
+}
+
+#pedal.on:active {
+    border-color: hsl(0, 0%, 10%);
+    background-image: -webkit-repeating-linear-gradient(top, hsl(0, 0%, 10%) 0%, 
+                                                             hsl(0, 0%, 16%) 46%, 
+                                                             hsl(0, 0%, 5%) 100%);
+    background-image: -moz-repeating-linear-gradient(top, hsl(0, 0%, 10%) 0%, 
+                                                             hsl(0, 0%, 16%) 46%, 
+                                                             hsl(0, 0%, 5%) 100%);
+    background-image: -o-repeating-linear-gradient(top, hsl(0, 0%, 10%) 0%, 
+                                                             hsl(0, 0%, 16%) 46%, 
+                                                             hsl(0, 0%, 5%) 100%);
+}
+
+.pedal-line {
+    background-image: inherit;
+    width: 3.5em;
+    height: 5em;
+    display: inline-block;
+    border-style: inherit;
+    border-color: inherit;
+    margin: 0.2em 0em 0.2em 0.2em;
+}
+
+/* ------------------------------ DOOR SHINE ------------------------------ */
+#door-shine {
+    position: absolute;
+    z-index: 10000;
+    top: 0;
+    height: 90%;
+    /* mix-blend-mode: overlay; */
+    border-style: solid transparent;
+}
+
+#door-shine.door-shine-off {
+    mix-blend-mode: color-burn;
+    border-style: solid transparent;
+    left: 0em;
+}
+
+#door-shine.door-shine-on {
+    /* left: 50%; */
+    mix-blend-mode: color-burn;
+    -webkit-animation: door-shining 12s;
+    -moz-animation: door-shining 12s;
+    -o-animation: door-shining 12s;
+    animation: door-shining 12s;
+    left: -500%;
+}
+
+#door-shine-left {
+    display: inline-block;
+    position: relative;
+    background-color: #2E2E2E;
+    background-size: 50px 50px;
+    z-index: 100001;
+    width: 100em;
+    height: 90%;
+    margin: 0;
+    /* mix-blend-mode: color-burn; */
+}
+
+#door-shine-right {
+    display: inline-block;     
+    position: relative;     
+    background: linear-gradient(135deg, #363636 50%, transparent 66%) 0px 0;     
+    /*
+    background: -webkit-linear-gradient(135deg, #363636 50%, transparent 66%) 0px 0;     
+    background: -moz-linear-gradient(135deg, #363636 50%, transparent 66%) 0px 0;     
+    background: -o-linear-gradient(135deg, #363636 50%, transparent 66%) 0px 0;     
+    */
+    z-index: 100001;     
+    width: 200em;     
+    height: 95%;     
+    margin: 0;
+    left: 0em;
+}
+
+
+/* ------------------------------ ANIMATIONS ------------------------------ */
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    89% {
+        opacity: 0;
+    }
+    90% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes show {
+    0% {
+        opacity: 0;
+    }
+    89% {
+        opacity: 0;
+    }
+    90% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+
+@keyframes show-author {
+    0% {
+        display: none;
+        opacity: 0;
+        letter-spacing: -20em;
+        left: -100%;
+    }
+    49%{
+        opacity: 0;
+        letter-spacing: -20em;
+        left: -100%;
+    }
+    50%{
+        letter-spacing: -20em;
+        opacity: 1;
+        left: 50%;
+    }
+    90% {
+        letter-spacing: 1em;
+    }
+    100% {
+        letter-spacing: 0.5em;
+    }
+}
+@-webkit-keyframes show-author {
+    0% {
+        display: none;
+        opacity: 0;
+        letter-spacing: -20em;
+        left: -100%;
+    }
+    49%{
+        opacity: 0;
+        letter-spacing: -20em;
+        left: -100%;
+    }
+    50%{
+        letter-spacing: -20em;
+        opacity: 1;
+        left: 50%;
+    }
+    90% {
+        letter-spacing: 1em;
+    }
+    100% {
+        letter-spacing: 0.5em;
+    }
+}
+
+
+
+
+@keyframes time-traveling {
+    0% {
+        background-image: url("../img/bttf-bg.jpg");
+    }
+    1% {
+        background-image: none;
+    }
+    30% {
+        background-image: url("../img/bttf-bg.jpg");
+    }
+    31% {
+        background-image: none;
+    }
+    70% {
+        background-image: url("../img/bttf-bg.jpg");
+    }
+    71% {
+        background-image: none;
+    }
+}
+@-webkit-keyframes time-traveling {
+    0% {
+        background-image: url("../img/bttf-bg.jpg");
+    }
+    1% {
+        background-image: none;
+    }
+    30% {
+        background-image: url("../img/bttf-bg.jpg");
+    }
+    31% {
+        background-image: none;
+    }
+    70% {
+        background-image: url("../img/bttf-bg.jpg");
+    }
+    71% {
+        background-image: none;
+    }
+}
+
+@keyframes door-shining {
+    0% {
+        left: 0%;
+    }
+    100% {
+        left:-300%;
+    }
+}
+@-webkit-keyframes door-shining {
+    0% {
+        left: 0%;
+    }
+    100% {
+        left:-300%;
+    }
+}
+
+
+
+
+@keyframes hide-sign {
+    0% {
+        left: 0%;
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        left: 0%;
+    }
+}
+
+@-webkit-keyframes hide-sign {
+    0% {
+        left: 0%;
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        left: 0%;
+    }
+}

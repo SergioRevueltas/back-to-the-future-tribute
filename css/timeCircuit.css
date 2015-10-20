@@ -1,0 +1,996 @@
+/* ------------------------------------------ time-circuit ------------------------------------------ */
+#time-circuit {
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+#time-circuit:hover {
+    cursor: pointer;
+}
+
+/* ------------------------------------------ panel ------------------------------------------ */
+.panel {
+    display: block;
+    position: relative;
+    box-shadow: 
+        inset hsla(0,0%,15%, 1) 0 0px 0px 0.1em, 
+        inset hsla(0,0%,10%, .4) 0 -0.1em 0.1em 0.1em, 
+        inset hsla(0,0%,0%, .25) 0 0.1em 0px 0.1em, 
+        inset hsla(0,0%,100%,.7) 0 0.2em 0.1em 0.2em;
+    border-radius: .3em;
+    background-image: 
+        -webkit-repeating-linear-gradient(left, hsla(0, 0%, 88%, 0) 0%,
+                                                hsla(0, 0%, 88%, 0) 0%,
+                                                hsla(0, 0%, 88%, 0.1) 0.7%),
+        -webkit-repeating-linear-gradient(left, hsla(0,0%, 0%, 0) 0%,
+                                                hsla(0,0%, 0%, 0) 0.4%,
+                                                hsla(0,0%, 0%, 0.03) 1.2%),                                        
+        -webkit-repeating-linear-gradient(left, hsla(0,0%,100%, 0.05) 0%,
+                                                hsla(0,0%,100%, 0) 4%,
+                                                hsla(0,0%,100%, 0.15) 13.3%),
+        linear-gradient(180deg, hsl(0, 0%, 40%) 0%, 
+                                hsl(0, 0%, 85%) 47%,
+                                hsl(0,0%,78%) 53%,
+                                hsl(0, 0%, 45%)100%);
+
+    background-image: 
+        -moz-repeating-linear-gradient(left, hsla(0, 0%, 88%, 0) 0%,
+                                                hsla(0, 0%, 88%, 0) 0%,
+                                                hsla(0, 0%, 88%, 0.1) 0.7%),
+        -moz-repeating-linear-gradient(left, hsla(0,0%, 0%, 0) 0%,
+                                                hsla(0,0%, 0%, 0) 0.4%,
+                                                hsla(0,0%, 0%, 0.03) 1.2%),                                        
+        -moz-repeating-linear-gradient(left, hsla(0,0%,100%, 0.05) 0%,
+                                                hsla(0,0%,100%, 0) 4%,
+                                                hsla(0,0%,100%, 0.15) 13.3%),
+        -moz-linear-gradient(180deg, hsl(0, 0%, 40%) 0%, 
+                                hsl(0, 0%, 85%) 47%,
+                                hsl(0,0%,78%) 53%,
+                                hsl(0, 0%, 45%)100%);
+
+    background-image: 
+        -o-repeating-linear-gradient(left, hsla(0, 0%, 88%, 0) 0%,
+                                                hsla(0, 0%, 88%, 0) 0%,
+                                                hsla(0, 0%, 88%, 0.1) 0.7%),
+        -o-repeating-linear-gradient(left, hsla(0,0%, 0%, 0) 0%,
+                                                hsla(0,0%, 0%, 0) 0.4%,
+                                                hsla(0,0%, 0%, 0.03) 1.2%),                                        
+        -o-repeating-linear-gradient(left, hsla(0,0%,100%, 0.05) 0%,
+                                                hsla(0,0%,100%, 0) 4%,
+                                                hsla(0,0%,100%, 0.15) 13.3%),
+        -o-linear-gradient(180deg, hsl(0, 0%, 40%) 0%, 
+                                hsl(0, 0%, 85%) 47%,
+                                hsl(0,0%,78%) 53%,
+                                hsl(0, 0%, 45%)100%);
+}
+
+
+
+#destination-time {
+    /* transform: translate3d(0em,0em,-2em); */
+    /* background-image: 
+        -webkit-repeating-linear-gradient(left, hsla(0, 0%, 82%, 0) 0%, 
+                                                hsla(0, 0%, 82%, 0) 0%, 
+                                                hsla(0,0%,82%,0.1) 0.7%), 
+        -webkit-repeating-linear-gradient(left, hsla(0,0%, 0%, 0) 0%, 
+                                                hsla(0,0%, 0%, 0) 0.4%, 
+                                                hsla(0,0%, 0%, 0.03) 1.2%), 
+        -webkit-repeating-linear-gradient(left, hsla(0,0%,100%, 0.05) 0%, 
+                                                hsla(0,0%,100%, 0) 4%, 
+                                                hsla(0,0%,100%, 0.15) 13.3%), 
+        linear-gradient(180deg, hsl(0, 0%, 25%) 0%, 
+                                hsl(0, 3%, 66%) 47%, 
+                                hsl(0, 0%, 69%) 53%, 
+                                hsl(0, 0%, 30%)100%); */
+    /* -webkit-transform: translate3d(0px, 0, -38px); */
+    /* -webkit-perspective: 79px; */
+    /* -webkit-transform-style: preserve-3d; */
+}
+#present-time {
+    /* transform: translate3d(0em,0em,-1em); */
+    /* background-image:           
+    
+    -webkit-repeating-linear-gradient(left, hsla(0, 0%, 82%, 0) 0%, hsla(0, 0%, 82%, 0) 0%, hsla(0,0%,82%,0.1) 0.7%),                     
+    
+    -webkit-repeating-linear-gradient(left, hsla(0,0%, 0%, 0) 0%, hsla(0,0%, 0%, 0) 0.4%, hsla(0,0%, 0%, 0.03) 1.2%),                     
+    
+    -webkit-repeating-linear-gradient(left, hsla(0,0%,100%, 0.05) 0%, hsla(0,0%,100%, 0) 4%, hsla(0,0%,100%, 0.15) 13.3%), linear-gradient(180deg, hsl(0, 0%, 45%) 0%, hsl(0, 3%, 66%) 47%, hsl(0, 0%, 69%) 53%, hsl(0, 1%, 33%)100%); */
+}
+#last-time-departed {
+    
+}
+
+/* ------------------------------------------ boxes - wrappers ------------------------------------------ */
+
+.box {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.month-wrapper {
+    margin: 0.5em 0.1em 0.1em 0.5em;
+}
+
+.day-wrapper {
+    margin: 0.5em 1em 0.5em 0.5em;
+    /* left: 0.6em; */
+}
+
+.year-wrapper {
+    margin: 0.5em 0.01em 0.1em 0.3em;
+    /* left: 0.9em; */
+}
+
+.am-pm-wrapper {
+    margin: 0.3em 0.01em 0.1em 0.01em;
+    /* left: 0.5em; */
+}
+
+.am-pm-wrapper .wrapper:nth-child(1){
+    top: 0em;
+}
+
+.am-pm-wrapper .wrapper:nth-child(2n){
+    top: 0.1em;
+}
+
+.am-pm-wrapper .wrapper:nth-child(3){
+    top: 0em;
+}
+
+.hour-wrapper {
+    margin: 0.5em 0.25em 0.5em 0.01em;
+    /* left: 0.5em; */
+}
+
+.min-wrapper {
+    margin: 0.5em 0.5em 0.5em 0.25em;
+}
+
+.time-separator-wrapper {
+    /* left: 0.4em; */
+    top: -0.3em;
+}
+
+.time-separator-wrapper .wraper:nth-child(2){
+    position: relative;
+    top: 3em;
+}
+
+/* ------------------------------------------ labels ------------------------------------------ */
+.wrapper {
+    display:block;
+    position: relative;
+}
+
+.label-red{
+    display: inline-block;
+    padding: 0.15em 0.4em 0.05em 0.4em;
+    letter-spacing: 0.05em;
+    font-size: 0.8em;
+    font-weight: bold;
+    background-color: rgb(121, 25, 5);
+}
+
+.label-black {
+    display: inline-block;
+    padding: 0.15em 0.7em;
+    margin-top: 0.1em;
+    margin-bottom: 0.4em;
+    letter-spacing: 0.15em;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: black;
+    position: relative;
+}
+
+.am-pm-wrapper .label-red {
+    padding: 0.1em 0.2em;    
+}
+
+/* ---- destination-time labels customization ---- */
+
+#destination-time .month-wrapper .label-red{
+    padding: 0.15em 0.4em 0.05em 0.4em;
+    transform: translate(-0.1em, 0em) rotateZ(1deg);
+}
+
+#destination-time .day-wrapper .label-red{
+    padding: 0.2em 0.3em 0.05em 0.6em;
+    transform: translate(0.1em, 0.1em) rotateZ(0deg);
+}
+
+#destination-time .year-wrapper .label-red{
+    padding: 0.15em 0.5em 0em 0.6em;
+    transform: translate(0.5em, 0em) rotateZ(2deg);
+}
+
+#destination-time .am-pm-wrapper .wrapper:nth-child(1) .label-red{
+    padding: 0.15em 0.2em 0.05em 0.4em;
+    transform: translate(0.2em, 0em) rotateZ(1deg);
+}
+
+#destination-time .am-pm-wrapper .wrapper:nth-child(3) .label-red{
+    padding: 0.1em 0.4em 0em 0.4em;
+    transform: translate(-0.1em, 0em) rotateZ(-2deg);
+}
+
+#destination-time .hour-wrapper .label-red{
+    padding: 0.15em 0.6em 0.05em 0.8em;
+    transform: translate(0.5em, 0.1em) rotateZ(-1deg);
+}
+
+#destination-time .min-wrapper .label-red{
+    padding: 0.15em 0.8em 0.05em 0.4em;
+    transform: translate(-0.4em, 0em) rotateZ(-3deg);
+}
+
+#destination-time .label-black{
+    padding: 0.2em 0.4em 0.05em 1em;
+    transform: translate(-0.4em, 0em) rotateZ(-0.5deg);
+}
+
+
+/* ---- present-time labels customization ---- */
+
+#present-time .month-wrapper .label-red{
+    padding: 0.15em 0.1em 0.05em 0.7em;
+    transform: translate(-0.1em, 0.2em) rotateZ(-2deg);
+}
+
+#present-time .day-wrapper .label-red{
+    padding: 0.1em 0.3em 0.15em 0.6em;
+    transform: translate(-0.4em, 0em) rotateZ(1deg);
+}
+
+#present-time .year-wrapper .label-red{
+    padding: 0.15em 0.5em 0em 0.6em;
+    transform: translate(1em, 0.1em) rotateZ(0deg);
+}
+
+#present-time .am-pm-wrapper .wrapper:nth-child(1) .label-red{
+    padding: 0.15em 0.4em 0.05em 0.4em;
+    transform: translate(0em, 0em) rotateZ(0deg);
+}
+
+#present-time .am-pm-wrapper .wrapper:nth-child(3) .label-red{
+    padding: 0.1em 0.4em 0em 0.1em;
+    transform: translate(0.1em, 0em) rotateZ(-2deg);
+}
+
+#present-time .hour-wrapper .label-red{
+    padding: 0.15em 0.2em 0.05em 0.3em;
+    transform: translate(-0.2em, 0.1em) rotateZ(1deg);
+}
+
+#present-time .min-wrapper .label-red{
+    padding: 0.15em 0.4em 0.05em 0.4em;
+    transform: translate(-0.4em, 0em) rotateZ(0deg);
+}
+
+#present-time .label-black{
+    padding: 0.15em 1.2em 0.2em 0.4em;
+    transform: translate(-0.4em, 0em) rotateZ(0.5deg);
+}
+
+
+
+/* ---- last-time-departed labels customization ---- */
+#last-time-departed .month-wrapper .label-red{
+    padding: 0.15em 0.7em 0.05em 0.4em;
+    transform: translate(0.7em, 0em) rotateZ(1deg);
+}
+
+#last-time-departed .day-wrapper .label-red{
+    padding: 0.2em 0.6em 0.05em 0.2em;
+    transform: translate(0.1em, 0em) rotateZ(2deg);
+}
+
+#last-time-departed .year-wrapper .label-red{
+    padding: 0.15em 0.5em 0.05em 1em;
+    transform: translate(-0.4em, 0.1em) rotateZ(-1deg);
+}
+
+#last-time-departed .am-pm-wrapper .wrapper:nth-child(1) .label-red{
+    padding: 0.15em 0.4em 0.05em 0.4em;
+    transform: translate(0.2em, 0em) rotateZ(1deg);
+}
+
+#last-time-departed .am-pm-wrapper .wrapper:nth-child(3) .label-red{
+    padding: 0.1em 0.4em 0em 0.4em;
+    transform: translate(0em, 0em) rotateZ(0deg);
+}
+
+#last-time-departed .hour-wrapper .label-red{
+    padding: 0.15em 1em 0.05em 0.2em;
+    transform: translate(0.5em, 0.1em) rotateZ(-1deg);
+}
+
+#last-time-departed .min-wrapper .label-red{
+    padding: 0.15em 0.8em 0.05em 0.4em;
+    transform: translate(0.4em, 0.2em) rotateZ(0.5deg);
+}
+
+#last-time-departed .label-black{
+    padding: 0.15em 0.8em 0.05em 0.4em;
+    transform: translate(0.5em, 0em) rotateZ(-0.5deg);
+}
+
+/* ------------------------------------------ display ------------------------------------------ */
+.display {
+    position: relative;
+    top: 0.3em;
+    display: inline-block;
+    background-color: black;
+    border-color: rgb(74, 74, 74);
+    border-style: solid;
+    border-width: thin;
+    border-top: none;
+    border-left: none;
+    /* box-shadow: inset rgba(73, 74, 33, 0.5) -1.2em -1em 1em 0.1em; */
+    z-index: 10000;
+    /* padding: 0.25em 0.1em 0.1em 0.25em; */
+}
+
+.number {
+    left: 0.1em;
+    top: 0.3em;
+    margin-right: 2.2em;
+    padding: 0.1em 0.4em 0.1em 0.1em;
+}
+
+.digit {
+    font-family: "Seven-segments", "Arial";
+    font-size: 5.7em;
+    display: inline;
+    position: relative;
+    line-height: 0.7em;
+
+}
+
+.digit-value-wrapper {
+    display: inline;
+    position: relative;
+    
+}
+
+.digit-value {
+    display: inline-block;
+    position: relative;
+    z-index: 20;
+    margin-right: -0.4em;/* as letter-spacing */
+    -ms-transform: skewX(-8deg);
+    -webkit-transform: skewX(-8deg);
+    -moz-transform: skewX(-8deg);
+    -o-transform: skewX(-8deg);
+    transform: skewX(-8deg);
+}
+
+.digit-value.digit-visible {
+    opacity: 1;
+}
+
+.digit-value.digit-hidden {
+    opacity: 0;
+}
+
+.digit-value.failure {
+    -webkit-animation: toogle-digits 0.5s;
+    -moz-animation: toogle-digits 0.5s;
+    -o-animation: toogle-digits 0.5s;
+    animation: toogle-digits 0.5s;
+    display: inline-block;
+    position: relative;
+    z-index: 20;
+    margin-right: -0.4em;/* as letter-spacing */
+    -ms-transform: skewX(-8deg);
+    -webkit-transform: skewX(-8deg);
+    -moz-transform: skewX(-8deg);
+    -o-transform: skewX(-8deg);
+    transform: skewX(-8deg);
+}
+@keyframes toogle-digits {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }  
+    99% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes toogle-digits {
+    0% {
+        opacity: 0;
+    } 
+    50% {
+        opacity: 1;
+    }  
+    99% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes toogle-digits {
+    0% {
+        opacity: 0;
+    } 
+    50% {
+        opacity: 1;
+    }  
+    99% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* RED */
+#destination-time .digit-value{
+    color: rgb(242, 57, 39);
+    text-shadow: 0px 0px 15px rgb(242, 57, 39);
+}
+/* GREEN */
+#present-time .digit-value{
+    color: rgb(125, 217, 84);
+    text-shadow: 0px 0px 15px rgb(125, 217, 84);
+}
+/* ORANGE */
+#last-time-departed .digit-value{
+    color: rgb(253, 164, 40);
+    text-shadow: 0px 0px 15px rgb(253, 164, 40);
+}
+
+.digit-bg {
+    display: inline-block;
+    position: absolute;
+    top: 0.11em;
+    left: 0em;
+    z-index: 10;
+    -ms-transform: skewX(-8deg);
+    -webkit-transform: skewX(-8deg);
+    -moz-transform: skewX(-8deg);
+    -o-transform: skewX(-8deg);
+    transform: skewX(-8deg);
+}
+/* RED */
+#destination-time .digit-bg{
+    color: rgba(147, 65, 57, 0.4);
+}
+/* GREEN */
+#present-time .digit-bg{
+    color: rgba(84, 118, 68, 0.4);
+}
+/* ORANGE */
+#last-time-departed .digit-bg{
+    color: rgba(143, 85, 5, 0.4);
+}
+
+
+/* ------------------------------------------ led ------------------------------------------ */
+.led {
+    position: relative;
+    display: inline-block;
+    width: 0.7em;
+    height: 0.7em;
+    border-radius: 50%;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    -o-border-radius: 0.5em;
+    -ms-border-radius: 0.5em;
+}
+
+.led.on {
+    background-color: yellow;
+    background-image: -webkit-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+    background-image: -moz-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);  
+    background-image: -o-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+    background-image: -ms-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+
+    box-shadow: 0px 0px 0.4em 0.1em yellow;
+    -webkit-box-shadow: 0px 0px 0.4em 0.1em yellow;
+    -moz-box-shadow: 0px 0px 0.4em 0.1em yellow;
+    -o-box-shadow: 0px 0px 0.4em 0.1em yellow;
+    -ms-box-shadow: 0px 0px 0.4em 0.1em yellow;
+
+}
+
+.led.on.red {
+    background-color: rgb(253, 255, 94);
+    background-image: -webkit-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+    background-image: -moz-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+    background-image: -o-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+    background-image: -ms-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+
+    box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+    -webkit-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+    -moz-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+    -o-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+    -ms-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+
+}
+
+.led.on.red.flashing {  
+    -webkit-animation: toogle-leds-red 1s;
+    -moz-animation: toogle-leds-red 1s;
+    -o-animation: toogle-leds-red 1s;
+    -ms-animation: toogle-leds-red 1s;
+
+    animation: toogle-leds-red 1s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    
+}
+@keyframes toogle-leds-red {
+    0% {
+        background-color: rgb(253, 255, 94);
+        background-image: -webkit-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -moz-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -o-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -ms-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+
+        box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -webkit-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -moz-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -o-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -ms-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+
+    }
+    49% {
+        background-color: rgb(253, 255, 94);
+        background-image: -webkit-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -moz-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -o-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -ms-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+
+        box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -webkit-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -moz-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -o-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -ms-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+    }
+    50% {
+        background-color: #FFFFFF;
+        background-image: -webkit-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -moz-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -o-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -ms-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        
+        box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+        -webkit-box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+        -moz-box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+        -o-box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+        -ms-box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+    }
+    99% {
+        background-color: #FFFFFF;
+        background-image: -webkit-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -moz-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -o-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -ms-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        
+        box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+        -webkit-box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+        -moz-box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+        -o-box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+        -ms-box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+    }
+    100% {
+        background-color: rgb(253, 255, 94);
+        background-image: -webkit-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -moz-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -o-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -ms-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+
+        box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -webkit-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -moz-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -o-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -ms-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+    }
+}
+@-webkit-keyframes toogle-leds-red {
+    0% {
+        background-color: rgb(253, 255, 94);
+        background-image: -webkit-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -moz-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -o-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -ms-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+
+        box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -webkit-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -moz-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -o-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -ms-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+
+    }
+    49% {
+        background-color: rgb(253, 255, 94);
+        background-image: -webkit-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -moz-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -o-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -ms-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+
+        box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -webkit-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -moz-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -o-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -ms-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+    }
+    50% {
+        background-color: #FFFFFF;
+        background-image: -webkit-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -moz-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -o-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -ms-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        
+        box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+        -webkit-box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+        -moz-box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+        -o-box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+        -ms-box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+    }
+    99% {
+        background-color: #FFFFFF;
+        background-image: -webkit-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -moz-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -o-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -ms-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        
+        box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+        -webkit-box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+        -moz-box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+        -o-box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+        -ms-box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+    }
+    100% {
+        background-color: rgb(253, 255, 94);
+        background-image: -webkit-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -moz-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -o-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -ms-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+
+        box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -webkit-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -moz-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -o-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -ms-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+    }
+}
+
+@-moz-keyframes toogle-leds-red {
+    0% {
+        background-color: rgb(253, 255, 94);
+        background-image: -webkit-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -moz-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -o-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -ms-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+
+        box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -webkit-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -moz-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -o-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -ms-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+
+    }
+    49% {
+        background-color: rgb(253, 255, 94);
+        background-image: -webkit-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -moz-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -o-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -ms-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+
+        box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -webkit-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -moz-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -o-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -ms-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+    }
+    50% {
+        background-color: #FFFFFF;
+        background-image: -webkit-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -moz-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -o-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -ms-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        
+        box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+        -webkit-box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+        -moz-box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+        -o-box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+        -ms-box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+    }
+    99% {
+        background-color: #FFFFFF;
+        background-image: -webkit-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -moz-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -o-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -ms-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        
+        box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+        -webkit-box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+        -moz-box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+        -o-box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+        -ms-box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+    }
+    100% {
+        background-color: rgb(253, 255, 94);
+        background-image: -webkit-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -moz-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -o-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+        background-image: -ms-linear-gradient(-45deg, rgba(242, 57, 39, .8) 0%, transparent 100%);
+
+        box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -webkit-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -moz-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -o-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+        -ms-box-shadow: 0px 0px 0.6em 0.2em rgb(255, 120, 27);
+    }
+}
+
+.led.on.green {
+    box-shadow: 0px 0px 0.4em 0.1em rgb(125, 217, 84);
+}
+
+.led.on.green.flashing {
+    -webkit-animation: toogle-leds-green 1s;
+    -moz-animation: toogle-leds-green 1s;
+    -o-animation: toogle-leds-green 1s;
+    animation: toogle-leds-green 1s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    
+}
+@keyframes toogle-leds-green {
+    0% {
+        background-color: yellow;
+        box-shadow: 0px 0px 11px 2px rgb(125, 217, 84);
+        background-image: -webkit-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+        background-image: -moz-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);  
+        background-image: -o-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+        background-image: -ms-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+    }
+    49% {
+        background-color: yellow;
+        box-shadow: 0px 0px 11px 2px rgb(125, 217, 84);
+        background-image: -webkit-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+        background-image: -moz-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);  
+        background-image: -o-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+        background-image: -ms-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+    }
+    50% {
+        background-color: #FFFFFF;
+        background-image: -webkit-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -moz-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -o-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -ms-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+    }
+    99% {
+        background-color: #FFFFFF;
+        background-image: -webkit-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -moz-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -o-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -ms-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+    }
+    100% {
+        background-color: yellow;
+        box-shadow: 0px 0px 11px 2px rgb(125, 217, 84);
+        background-image: -webkit-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+        background-image: -moz-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);  
+        background-image: -o-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+        background-image: -ms-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+    }
+}
+@-webkit-keyframes toogle-leds-green {
+    0% {
+        background-color: yellow;
+        box-shadow: 0px 0px 11px 2px rgb(125, 217, 84);
+        background-image: -webkit-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+        background-image: -moz-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);  
+        background-image: -o-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+        background-image: -ms-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+    }
+    49% {
+        background-color: yellow;
+        box-shadow: 0px 0px 11px 2px rgb(125, 217, 84);
+        background-image: -webkit-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+        background-image: -moz-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);  
+        background-image: -o-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+        background-image: -ms-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+    }
+    50% {
+        background-color: #FFFFFF;
+        background-image: -webkit-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -moz-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -o-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -ms-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+    }
+    99% {
+        background-color: #FFFFFF;
+        background-image: -webkit-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -moz-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -o-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -ms-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+    }
+    100% {
+        background-color: yellow;
+        box-shadow: 0px 0px 11px 2px rgb(125, 217, 84);
+        background-image: -webkit-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+        background-image: -moz-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);  
+        background-image: -o-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+        background-image: -ms-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+    }
+}
+
+
+.led.on.orange {
+    box-shadow: 0px 0px 0.4em 0.1em rgb(253, 164, 40);
+}
+
+.led.on.orange.flashing {
+    -webkit-animation: toogle-leds-orange 1s;
+    -moz-animation: toogle-leds-orange 1s;
+    -o-animation: toogle-leds-orange 1s;
+    animation: toogle-leds-orange 1s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    
+}
+@keyframes toogle-leds-orange {
+    0% {
+        background-color: yellow;
+        box-shadow: 0px 0px 11px 2px rgb(253, 164, 40);
+        background-image: -webkit-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+        background-image: -moz-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);  
+        background-image: -o-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+        background-image: -ms-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+    }
+    49% {
+        background-color: yellow;
+        box-shadow: 0px 0px 11px 2px rgb(253, 164, 40);
+        background-image: -webkit-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+        background-image: -moz-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);  
+        background-image: -o-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+        background-image: -ms-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+    }
+    50% {
+        background-color: #FFFFFF;
+        background-image: -webkit-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -moz-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -o-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -ms-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+    }
+    99% {
+        background-color: #FFFFFF;
+        background-image: -webkit-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -moz-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -o-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -ms-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+    }
+    100% {
+        background-color: yellow;
+        box-shadow: 0px 0px 11px 2px rgb(253, 164, 40);
+        background-image: -webkit-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+        background-image: -moz-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);  
+        background-image: -o-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+        background-image: -ms-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+    }
+}
+@-webkit-keyframes toogle-leds-orange {
+    0% {
+        background-color: yellow;
+        box-shadow: 0px 0px 11px 2px rgb(253, 164, 40);
+        background-image: -webkit-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+        background-image: -moz-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);  
+        background-image: -o-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+        background-image: -ms-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+    }
+    49% {
+        background-color: yellow;
+        box-shadow: 0px 0px 11px 2px rgb(253, 164, 40);
+        background-image: -webkit-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+        background-image: -moz-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);  
+        background-image: -o-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+        background-image: -ms-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+    }
+    50% {
+        background-color: #FFFFFF;
+        background-image: -webkit-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -moz-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -o-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -ms-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+    }
+    99% {
+        background-color: #FFFFFF;
+        background-image: -webkit-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -moz-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -o-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        background-image: -ms-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+        box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+    }
+    100% {
+        background-color: yellow;
+        box-shadow: 0px 0px 11px 2px rgb(253, 164, 40);
+        background-image: -webkit-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+        background-image: -moz-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);  
+        background-image: -o-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+        background-image: -ms-linear-gradient(-45deg, rgba(40,50,50,.4) 0%, transparent 100%);
+    }
+}
+
+
+.led.off {
+    background-color: #FFFFFF;
+    background-image: -webkit-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+    background-image: -moz-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+    background-image: -o-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+    background-image: -ms-linear-gradient(135deg, rgb(0, 0, 0) 35%, rgba(255,255,255,0.5) 100%);
+    box-shadow: inset 0.15em 0.15em 0.1em 0.05em rgba(0,0,0,0.6);
+
+}
+
+
+/* this gets mozilla to handle minor style exceptions */
+@-moz-document url-prefix() {
+    
+    .number {
+        left: 0.1em;
+        top: 0em; /* fix moz */    
+        margin-right: 2.2em;
+        padding: 0.1em 0.4em 0.1em 0.1em;
+    }
+
+    .digit {
+        font-family: "Seven-segments", "Arial";
+        font-size: 5.7em;
+        display: inline;
+        position: relative;
+        line-height: 0.4em; /* fix moz */
+    }
+
+    .digit-bg {
+        display: inline-block;
+        position: absolute;
+        top: 0.08em; /* fix moz */
+        left: 0em;
+        z-index: 10;
+        -ms-transform: skewX(-8deg);
+        -webkit-transform: skewX(-8deg);
+        -moz-transform: skewX(-8deg);
+        -o-transform: skewX(-8deg);
+        transform: skewX(-8deg);
+    }
+
+}
+
+/* Android minor style exceptions */
+.number.android {
+    top: 0em;
+    padding: 0.1em 0.2em 0em 0.1em;
+}
+.digit.android {
+    line-height: 0.45em;
+}
+.digit-bg.android {
+    top: 0.05em;
+    left: 0em;
+}
+

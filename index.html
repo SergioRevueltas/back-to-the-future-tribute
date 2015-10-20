@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Description -->
+	<title>Back to the future</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <meta name="description" content="CSS Time Circuit">
+
+    <!-- Styles -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/timeCircuit.css">
+	<link rel="stylesheet" href="css/timeControl.css">
+	<link rel="stylesheet" href="css/speedometer.css">
+	<link rel="stylesheet" href="css/mediaQueries.css">
+
+    <!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Syncopate:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+    <!-- Favicon: http://www.favicon-generator.org/ -->
+	<link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="img/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="img/favicon/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
+</head>
+<body class ="noselect">
+
+<!--
+
+	<header>
+		<h1>Back to the future</h1>
+	</header>
+
+	<div class="wrapper">
+		<p class="label-black">DESTINATION TIME</p>	
+		<p class="label-black">PRESENT TIME</p>
+		<p class="label-black">LAST TIME DEPARTED</p>
+		<p class="label-black">ABOUT</p>
+	</div>
+
+-->	
+
+    <!-- AUDIO -->
+	<audio id="intro-audio" controls>
+  		<source src="audio/back-to-the-future-intro.mp3" type="audio/mpeg">
+  		Your browser does not support the audio element.
+	</audio>
+
+	<audio id="win-audio" controls>
+  		<source src="audio/back-to-the-future-win.mp3" type="audio/mpeg">
+  		Your browser does not support the audio element.
+	</audio>
+
+	<audio id="win-audio-2" controls>
+  		<source src="audio/back-to-the-future-win-2.mp3" type="audio/mpeg">
+  		Your browser does not support the audio element.
+	</audio>
+
+	<audio id="win-audio-3" controls>
+  		<source src="audio/back-to-the-future-win-3.mp3" type="audio/mpeg">
+  		Your browser does not support the audio element.
+	</audio>
+
+	<audio id="tc-start-audio" controls>
+  		<source src="audio/time-circuit-start.mp3" type="audio/mpeg">
+  		Your browser does not support the audio element.
+	</audio>
+
+	<audio id="tc-stop-audio" controls>
+  		<source src="audio/time-circuit-stop.mp3" type="audio/mpeg">
+  		Your browser does not support the audio element.
+	</audio>
+
+	<audio id="tc-set-audio" controls>
+  		<source src="audio/time-circuit-set.mp3" type="audio/mpeg">
+  		Your browser does not support the audio element.
+	</audio>
+
+	<audio id="tc-failure-audio" controls>
+  		<source src="audio/time-circuit-failure.mp3" type="audio/mpeg">
+  		Your browser does not support the audio element.
+	</audio>
+
+	<audio id="num-pad-0123" controls>
+  		<source src="audio/num-pad-0123.mp3" type="audio/mpeg">
+  		Your browser does not support the audio element.
+	</audio>
+
+	<audio id="num-pad-456" controls>
+  		<source src="audio/num-pad-456.mp3" type="audio/mpeg">
+  		Your browser does not support the audio element.
+	</audio>
+
+	<audio id="num-pad-789" controls>
+  		<source src="audio/num-pad-789.mp3" type="audio/mpeg">
+  		Your browser does not support the audio element.
+	</audio>
+
+	<audio id="delorean-acceleration" controls>
+  		<source src="audio/delorean-acceleration.mp3" type="audio/mpeg">
+  		Your browser does not support the audio element.
+	</audio>
+
+	<audio id="delorean-deceleration" controls>
+  		<source src="audio/delorean-deceleration.mp3" type="audio/mpeg">
+  		Your browser does not support the audio element.
+	</audio>
+
+	<audio id="delorean-idle-a" controls>
+  		<source src="audio/delorean-idle.ogg" type="audio/mpeg">
+  		Your browser does not support the audio element.
+	</audio>
+
+	<audio id="delorean-idle-b" controls>
+  		<source src="audio/delorean-idle.ogg" type="audio/mpeg">
+  		Your browser does not support the audio element.
+	</audio>
+
+	<audio id="delorean-max-speed-a" controls>
+  		<source src="audio/delorean-max-speed.ogg" type="audio/mpeg">
+  		Your browser does not support the audio element.
+	</audio>
+
+	<audio id="delorean-max-speed-b" controls>
+  		<source src="audio/delorean-max-speed.ogg" type="audio/mpeg">
+  		Your browser does not support the audio element.
+	</audio>
+
+	<audio id="delorean-startup" controls>
+  		<source src="audio/delorean-startup.mp3" type="audio/mpeg">
+  		Your browser does not support the audio element.
+	</audio>
+
+	<audio id="delorean-turn-off" controls>
+  		<source src="audio/delorean-turn-off.mp3" type="audio/mpeg">
+  		Your browser does not support the audio element.
+	</audio>
+
+	<audio id="delorean-time-travel" controls>
+  		<source src="audio/delorean-time-travel.mp3" type="audio/mpeg">
+  		Your browser does not support the audio element.
+	</audio>
+
+	<audio id="delorean-door" controls>
+  		<source src="audio/delorean-door.mp3" type="audio/mpeg">
+  		Your browser does not support the audio element.
+	</audio>
+
+
+
+	<div id="sign">
+		<div id="sign-line-one">Do You Remember...</div>
+		<div id="sign-line-two"></div>
+	</div>
+
+	<div id="door-shine" class="door-shine-off">
+		<!-- <div id="door-shine-left"></div> -->
+		<div id="door-shine-right"></div>
+	</div>
+
+
+	<!-- 	DELOREAN TIME MACHINE
+
+             __---~~~~--__                      __--~~~~---__
+            `\---~~~~~~~~\\                    //~~~~~~~~---/'  
+              \/~~~~~~~~~\||                  ||/~~~~~~~~~\/ 
+                          `\\                //'
+                            `\\            //'
+                              ||          ||      
+                    ______--~~~~~~~~~~~~~~~~~~--______              
+               ___ // _-~                        ~-_ \\ ___  
+              `\__)\/~                              ~\/(__/'          
+               _--`-___                            ___-'--_        
+             /~     `\ ~~~~~~~~------------~~~~~~~~ /'     ~\        
+            /|        `\         ________         /'        |\     
+           | `\   ______`\_      \------/      _/'______   /' |          
+           |   `\_~-_____\ ~-________________-~ /_____-~_/'   |  
+           `.     ~-__________________________________-~     .'       
+            `.      [_______/------|~~|------\_______]      .'
+             `\--___((____)(________\/________)(____))___--/'           
+              |>>>>>>||                            ||<<<<<<|
+              `\<<<<</'                            `\>>>>>/' 
+
+             http://www.chris.com/ascii/index.php?art=transportation/cars
+
+	-->
+
+	<div id="time-machine">
+
+
+		<div id="sugar-sign" class="hidden">Marty, Doc and Jennyfer just arrived FLYING with delorean. When they will be? And most important thing, when can we buy a zapper gadget to render someone safely unconcious for an hour?</div>
+
+		<div class="box">
+			<div id="speedometer">	
+				<div id="mini-labels">
+					<div class="wrapper">
+						<div class="label-black mini-label">SET</div>
+					</div>
+					<div class="wrapper">
+						<div class="label-black mini-label">TO</div>
+					</div>
+					<div class="wrapper">
+						<div class="label-red mini-label">88</div>
+					</div>
+				</div>
+				
+				<div id="speed" class="display">
+					
+					<div class="number wrapper">
+						
+						<div id="ten" class="digit-border">
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+								<div class="digit-dot">.</div>
+							</div>
+						</div>
+
+						<div id="unit" class="digit-border">
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+								<div class="digit-dot">.</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+
+			<div id="time-control" class="noselect">
+				<div id="status-leds">
+					<div id="rect-red" class="rect">
+						<div class="shine"></div>
+					</div>
+					<div id="rect-yellow" class="rect">
+						<div class="shine"></div>
+					</div>
+					<div id="rect-blue" class="rect">
+						<div class="shine"></div>
+					</div>
+					<div id="rect-gray" class="rect">
+						<div class="shine"></div>
+					</div>
+					<div id="set-button" class="rect">
+						<div class="shine"></div>
+					</div>
+				</div>
+				<div class="box">
+					
+					<form>
+						<input id="textfield" type="text" name="Input" class="noselect" readonly>
+					</form>
+
+					<div id="num-pad">
+						<div class="num-row wrapper">
+							<div class="num-wrapper">
+								<div id="button-one" class="num-button">1</div>
+							</div>
+							<div class="num-wrapper">
+								<div id="button-two" class="num-button">2</div>
+							</div>
+							<div class="num-wrapper">
+								<div id="button-three" class="num-button">3</div>
+							</div>
+						</div>
+						<div class="num-row wrapper">
+							<div class="num-wrapper">
+								<div id="button-four" class="num-button">4</div>
+							</div>
+							<div class="num-wrapper">
+								<div id="button-five" class="num-button">5</div>
+							</div>
+							<div class="num-wrapper">
+								<div id="button-six" class="num-button">6</div>
+							</div>
+						</div>
+						<div class="num-row wrapper">
+							<div class="num-wrapper">
+								<div id="button-seven" class="num-button">7</div>
+							</div>
+							<div class="num-wrapper">
+								<div id="button-eight" class="num-button">8</div>
+							</div>
+							<div class="num-wrapper">
+								<div id="button-nine" class="num-button">9</div>
+							</div>
+						</div>
+						<div class="num-row wrapper">
+							<div class="num-wrapper">
+								<div id="button-zero" class="num-button">0</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+
+		</div>
+
+
+		<!-- 
+
+		TIME CIRCUIT
+
+		 .=========.
+		  \   |   /
+		   \  |  /
+		    \ | /
+		     \|/
+		      |
+		      |
+		      L---------------.
+		      |               |  ,
+		     _|_              | .i,
+		    "=#="             | /
+		    "=#="          ____/__
+		    "=#="          _______
+		    "=#="            /
+		    "=#="           / |
+		      |               |
+		      L---------------+
+		      |
+		      |
+		  =========
+		   =======
+		    =====
+		     ===
+		      = 
+
+
+		-->
+
+		<div id="time-circuit" class="noselect">
+
+			<div id="destination-time" class="panel">
+				<div class="month-wrapper box">
+					<div class="wrapper">
+						<div class="label-red">MONTH</div>
+					</div>
+					<div class="month display">
+						<div class="number wrapper">
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="day-wrapper box">
+					<div class="wrapper">
+						<div class="label-red">DAY</div>
+					</div>
+					<div class="day display">
+						<div class="number wrapper">
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="year-wrapper box">
+					<div class="wrapper">
+						<div class="label-red">YEAR</div>
+					</div>
+					<div class="year display">
+						<div class="number wrapper">
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="am-pm-wrapper box">
+					<div class="wrapper">
+						<div class="label-red">AM</div>
+					</div>
+					<div class="wrapper">
+						<div class="led off"></div>
+					</div>
+					<div class="wrapper">
+						<div class="label-red">PM</div>
+					</div>
+					<div class="wrapper">
+						<div class="led off"></div>
+					</div>
+				</div>
+
+				<div class="hour-wrapper box">
+					<div class="wrapper">
+						<div class="label-red">HOUR</div>
+					</div>
+					<div class="hour display">
+						<div class="number wrapper">
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="time-separator-wrapper box">
+					<div class="wrapper">
+						<div class="led off"></div>
+					</div>
+					<div class="wrapper">			
+						<div class="led off"></div>
+					</div>
+				</div>
+
+				<div class="min-wrapper box">
+					<div class="wrapper">
+						<div class="label-red">MIN</div>
+					</div>
+					<div class="min display">
+						<div class="number wrapper">
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="wrapper">
+					<div class="label-black">DESTINATION TIME</div>
+				</div>
+			</div>
+			
+
+			<div id="present-time" class="panel">
+				<div class="month-wrapper box">
+					<div class="wrapper">
+						<div class="label-red">MONTH</div>
+					</div>
+					<div class="month display">
+						<div class="number wrapper">
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="day-wrapper box">
+					<div class="wrapper">
+						<div class="label-red">DAY</div>
+					</div>
+					<div class="day display">
+						<div class="number wrapper">
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="year-wrapper box">
+					<div class="wrapper">
+						<div class="label-red">YEAR</div>
+					</div>
+					<div class="year display">
+						<div class="number wrapper">
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="am-pm-wrapper box">
+					<div class="wrapper">
+						<div class="label-red">AM</div>
+					</div>
+					<div class="wrapper">
+						<div class="led off"></div>
+					</div>
+					<div class="wrapper">
+						<div class="label-red">PM</div>
+					</div>
+					<div class="wrapper">
+						<div class="led off"></div>
+					</div>
+				</div>
+
+				<div class="hour-wrapper box">
+					<div class="wrapper">
+						<div class="label-red">HOUR</div>
+					</div>
+					<div class="hour display">
+						<div class="number wrapper">
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="time-separator-wrapper box">
+					<div class="wrapper">
+						<div class="led off"></div>
+					</div>
+					<div class="wrapper">			
+						<div class="led off"></div>
+					</div>
+				</div>
+
+				<div class="min-wrapper box">
+					<div class="wrapper">
+						<div class="label-red">MIN</div>
+					</div>
+					<div class="min display">
+						<div class="number wrapper">
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="wrapper">
+					<div class="label-black">PRESENT TIME</div>
+				</div>
+			</div>
+
+
+			<div id="last-time-departed" class="panel">
+				<div class="month-wrapper box">
+					<div class="wrapper">
+						<div class="label-red">MONTH</div>
+					</div>
+					<div class="month display">
+						<div class="number wrapper">
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="day-wrapper box">
+					<div class="wrapper">
+						<div class="label-red">DAY</div>
+					</div>
+					<div class="day display">
+						<div class="number wrapper">
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="year-wrapper box">
+					<div class="wrapper">
+						<div class="label-red">YEAR</div>
+					</div>
+					<div class="year display">
+						<div class="number wrapper">
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="am-pm-wrapper box">
+					<div class="wrapper">
+						<div class="label-red">AM</div>
+					</div>
+					<div class="wrapper">
+						<div class="led off"></div>
+					</div>
+					<div class="wrapper">
+						<div class="label-red">PM</div>
+					</div>
+					<div class="wrapper">
+						<div class="led off"></div>
+					</div>
+				</div>
+
+				<div class="hour-wrapper box">
+					<div class="wrapper">
+						<div class="label-red">HOUR</div>
+					</div>
+					<div class="hour display">
+						<div class="number wrapper">
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="time-separator-wrapper box">
+					<div class="wrapper">
+						<div class="led off"></div>
+					</div>
+					<div class="wrapper">			
+						<div class="led off"></div>
+					</div>
+				</div>
+
+				<div class="min-wrapper box">
+					<div class="wrapper">
+						<div class="label-red">MIN</div>
+					</div>
+					<div class="min display">
+						<div class="number wrapper">
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+							<div class="digit">
+								<div class="digit-value digit-hidden">8</div>
+								<div class="digit-bg">8</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="wrapper">
+					<div class="label-black">LAST TIME DEPARTED</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="wrapper">
+			<div id="pedal" class="noselect">
+				<div class="pedal-line"></div>
+				<div class="pedal-line"></div>
+				<div class="pedal-line"></div>
+			</div>
+		</div>
+	</div>
+
+
+	<footer class=""> 
+		<div id="author">Made with <span id="heart">&hearts;</span> by Sergio Revueltas</div>
+	</footer>
+	
+	<!-- Scripts -->
+	<!-- docReady Lib from: https://github.com/jfriend00/docReady -->
+	<script src="js/doc-ready.js"></script>	
+	<script src="js/timer.js"></script>
+	<script src="js/speedometer.js"></script>
+	<script src="js/controller.js"></script>
+</body>
+</html>
