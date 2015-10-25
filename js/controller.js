@@ -13,6 +13,8 @@ var isIOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/i) !== null;
 // Android device
 var isAndroid = navigator.userAgent.match(/android/i) !== null;
 
+var isMobile = isIOS || isAndroid;
+
 (function(document, Timer, Speedometer) {
   'use strict';
 
@@ -99,7 +101,7 @@ var timeCircuit = {
         this.initSugars();
 
         // local storage
-        if(typeof(Storage) !== "undefined") {
+        if(typeof(Storage) !== "undefined" && !isMobile) {
             if (!localStorage.getItem("lastTimeDeparted-Date")) {
                 localStorage.setItem("lastTimeDeparted-Date", "OCT2619850121");
                 localStorage.setItem("lastTimeDeparted-AmPm", clockSystem.AM);
@@ -347,7 +349,7 @@ var timeCircuit = {
             timeCircuit.timer.getAmPm(),
             panel.PRESENT_TIME, 0);
         // set LAST TIME DEPARTED panel
-        if(typeof(Storage) !== "undefined") {
+        if(typeof(Storage) !== "undefined" && !isMobile) {
             this.setValuesToPanel(localStorage.getItem("lastTimeDeparted-Date"),
                                   localStorage.getItem("lastTimeDeparted-AmPm"),
                                   panel.LAST_TIME_DEPARTED, 0);
@@ -457,7 +459,7 @@ var timeCircuit = {
             // update LAST time departed
             timeCircuit.setValuesToPanel(timeCircuit.panelsTimeValues[panel.PRESENT_TIME], timeCircuit.panelsTimeAmPm[panel.PRESENT_TIME], panel.LAST_TIME_DEPARTED, 0);
             // local storage
-            if(typeof(Storage) !== "undefined") {
+            if(typeof(Storage) !== "undefined" && !isMobile) {
                 localStorage.setItem("lastTimeDeparted-Date", timeCircuit.panelsTimeValues[panel.LAST_TIME_DEPARTED]);
                 localStorage.setItem("lastTimeDeparted-AmPm", timeCircuit.panelsTimeAmPm[panel.LAST_TIME_DEPARTED]);
             }
